@@ -1,0 +1,147 @@
+$main-color: #fff;
+$point-color: #59ab6e;
+$sub-color: #212934;
+$font-color: #cfd6e1;
+
+$gradient: linear-gradient(
+  to left,
+  rgba(255, 255, 255, 0.15) 0%,
+  rgba(255, 255, 255, 0) 100%
+);
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  width: 100%;
+  background: $main-color;
+}
+h1 {
+  font-size: 100px;
+}
+
+.top_bar {
+  background: $sub-color;
+  padding: 15px 0;
+  font-size: 11px;
+
+  .center {
+    @include flex;
+  }
+  a {
+    color: $font-color;
+    font-size: 11px;
+  }
+  a,
+  i {
+    margin-right: 3px;
+  }
+  em {
+    font-style: normal;
+  }
+  ul {
+    display: flex;
+    i {
+      &.fa {
+        font-size: 13px;
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+
+// header style code
+header {
+  box-shadow: 0 0 5px #ccc;
+  padding: 20px 0;
+  transition: all 0.4s;
+
+  &.stick {
+    padding: 12px 0;
+    background: $main-color;
+    z-index: 999;
+    .logo a {
+      font-size: 35px;
+      transition: all 0.4s;
+    }
+    .gnb {
+      font-size: 16px;
+    }
+  }
+  .center {
+    @include flex;
+    align-items: center;
+  }
+  .logo {
+    a {
+      color: $point-color;
+      font-size: 40px;
+      font-weight: 500;
+    }
+  }
+  .gnb {
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all 0.4s;
+    li {
+      margin: 0 50px;
+      a {
+        color: $sub-color;
+      }
+    }
+  }
+  .login_info {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 0 15px;
+      color: $sub-color;
+      font-weight: 400;
+      &:nth-child(2) {
+        border-left: 1px solid $sub-color;
+      }
+      &:nth-child(3) {
+        padding-right: 0;
+      }
+    }
+    img {
+      width: 30px;
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  // height: 60vh;
+  background: $gradient;
+  padding: 0;
+  .center {
+    @include flex();
+    align-items: center;
+    // max-width: 100%;
+    .slider_img {
+      height: 60vh;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .slider_txt {
+    h2 {
+      font-size: 50px;
+      font-weight: 100;
+    }
+    h4 {
+      font-size: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 15px;
+    }
+  }
+}

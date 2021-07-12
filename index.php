@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="/zay/lib/lightslider.css" />
   <!-- main css -->
   <link rel="stylesheet" href="/zay/css/style.css" />
+  <!-- media style css -->
+  <link rel="stylesheet" href="/zay/css/media.css" />
 </head>
 
 <body>
@@ -59,18 +61,24 @@
       <div class="center">
 
         <h2 class="logo"><a href="#">Zay</a></h2>
-        <ul class="gnb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-        <div class="login_info">
-          <a href="#">로그인</a>
-          <a href="#">회원가입</a>
-          <a href="#"><img src="/zay/img/default-user.png" alt=""></a>
+        <div class="menu_items">
+          <ul class="gnb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+          <div class="login_info">
+            <a href="#">로그인</a>
+            <a href="/zay/pages/join.php">회원가입</a>
+            <a href="#"><img src="/zay/img/default-user.png" alt=""></a>
+          </div>
         </div>
-
+        <div class="mobile_menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
     <!-- end of header section -->
@@ -121,10 +129,54 @@
         </div>
       </div>
       <!-- enc of loop slider box -->
-
-
     </section>
     <!-- end of slider landing section -->
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="center">
+        <div class="tit_box">
+          <h2>Categories of The Month</h2>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br>mollit anim id est
+            laborum.</p>
+        </div>
+        <div class="cate_box">
+          <!-- Loop of cate item -->
+          <div class="cate_item">
+            <div class="cate_img">
+              <img src="/zay/img/category_img_01.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+
+            <a href="#" class="main_btn">Go Shop</a>
+          </div>
+          <!-- end of Loop of cate item -->
+          <!-- Loop of cate item -->
+          <div class="cate_item">
+            <div class="cate_img">
+              <img src="/zay/img/category_img_02.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+
+            <a href="#" class="main_btn">Go Shop</a>
+          </div>
+          <!-- end of Loop of cate item -->
+          <!-- Loop of cate item -->
+          <div class="cate_item">
+            <div class="cate_img">
+              <img src="/zay/img/category_img_03.jpg" alt="">
+            </div>
+            <h3>Watches</h3>
+
+            <a href="#" class="main_btn">Go Shop</a>
+          </div>
+          <!-- end of Loop of cate item -->
+        </div>
+      </div>
+
+    </section>
+    <!-- end of Categories Section -->
+
   </div>
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

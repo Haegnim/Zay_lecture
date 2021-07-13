@@ -29,59 +29,11 @@
 
 <body>
   <div class="wrap">
-    <!-- top bar section -->
-    <div class="top_bar">
-      <div class="center">
-        <div class="contact_info">
-          <a href="#">
-            <i class="fa fa-envelope"></i>
-            <em>info@gmail.com</em>
-          </a>
-          <a href="#">
-            <i class="fa fa-phone"></i>
-            <em>+82 10 1234 5678</em>
-          </a>
 
-        </div>
-        <div class="sns_info">
-          <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          </ul>
-        </div>
+    <?php
+    include $_SERVER["DOCUMENT_ROOT"]."/zay/include/header.php";
+    ?>
 
-      </div>
-    </div>
-    <!-- end of top bar section -->
-
-    <!-- header section -->
-    <header>
-      <div class="center">
-
-        <h2 class="logo"><a href="#">Zay</a></h2>
-        <div class="menu_items">
-          <ul class="gnb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Community</a></li>
-          </ul>
-          <div class="login_info">
-            <a href="#">로그인</a>
-            <a href="/zay/pages/join.php">회원가입</a>
-            <a href="#"><img src="/zay/img/default-user.png" alt=""></a>
-          </div>
-        </div>
-        <div class="mobile_menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </header>
-    <!-- end of header section -->
     <!-- slider landing section -->
     <section class="slider">
       <!-- loop slider box -->
@@ -182,6 +134,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/lib/lightslider.js"></script>
   <script src="/zay/js/jq.main.js"></script>
+  <script src="/zay/js/slider.js"></script>
 </body>
 
 </html>

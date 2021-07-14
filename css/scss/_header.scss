@@ -1,0 +1,98 @@
+.top_bar {
+  background: $sub-color;
+  padding: 15px 0;
+  font-size: 11px;
+
+  .center {
+    @include flex($jc: space-between);
+  }
+  a {
+    color: $font-color;
+    font-size: 11px;
+  }
+  a,
+  i {
+    margin-right: 3px;
+  }
+  em {
+    font-style: normal;
+  }
+  ul {
+    display: flex;
+    i {
+      &.fa {
+        font-size: 13px;
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}
+header {
+  box-shadow: 0 0 5px #ccc;
+  padding: 20px 0;
+  transition: all 0.4s;
+  .menu_items {
+    @include flex($jc: space-between, $ai: center);
+    width: 85%;
+    // display: none;
+  }
+  &.stick {
+    padding: 12px 0;
+    background: $main-color;
+    z-index: 999;
+    .logo a {
+      font-size: 35px;
+      transition: all 0.4s;
+    }
+    .gnb {
+      font-size: 16px;
+    }
+  }
+  .center {
+    @include flex($jc: space-between, $ai: center);
+  }
+  .logo {
+    a {
+      color: $point-color;
+      font: {
+        size: 40px;
+        weight: 500;
+      }
+    }
+  }
+  .gnb {
+    @include flex($jc: center);
+    font: {
+      size: 16px;
+      weight: 300;
+    }
+    transition: all 0.4s;
+    width: 70%;
+    li {
+      margin: 0 50px;
+      a {
+        color: $sub-color;
+      }
+    }
+  }
+  .login_info {
+    @include flex($ai: center);
+    a {
+      padding: 0 15px;
+      color: $sub-color;
+      font-weight: 400;
+      &:nth-child(2) {
+        border-left: 1px solid $sub-color;
+      }
+      &:nth-child(3) {
+        @include size($w: 30px, $h: 30px, $p: 0);
+        overflow: hidden;
+        border-radius: 50%;
+      }
+    }
+    img {
+      @include size($w: 100%, $h: 100%);
+      object-fit: cover;
+    }
+  }
+}

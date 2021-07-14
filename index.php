@@ -128,7 +128,9 @@
 
     </section>
     <!-- end of Categories Section -->
-
+    <?php
+    include $_SERVER["DOCUMENT_ROOT"]."/zay/include/footer.php";
+    ?>
   </div>
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

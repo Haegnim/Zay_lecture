@@ -280,3 +280,77 @@ section.join {
     }
   }
 }
+.featured {
+  background: #e9eef5;
+  .item_frame {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 8px #ccc;
+  }
+  .featured_img {
+    border: 1px solid #efefef;
+    height: 350px;
+    overflow: hidden;
+  }
+  .featured_box {
+    @include size($w: 100%, $h: auto, $m: 30px 0);
+    @include flex();
+    flex-wrap: wrap;
+    .featured_item {
+      @include size($w: 33.33%, $p: 20px);
+      em {
+        font-style: normal;
+        font-size: 12px;
+        color: #777;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .like_unlike {
+    @include size($w: 100%, $h: auto, $p: 10px 0);
+    @include flex($jc: space-between);
+    span {
+      border: 1px solid #eee;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: normal;
+      &:nth-child(1) {
+        background: $point-color;
+        color: #fff;
+      }
+      &:nth-child(2) {
+        background: lightcoral;
+        color: #fff;
+      }
+    }
+  }
+  .featured_txt {
+    width: 100%;
+    color: #212529;
+
+    h3 {
+      font: {
+        size: 18px;
+        weight: 400;
+      }
+    }
+    p {
+      padding: 10px 0;
+      font: {
+        size: 14px;
+        weight: 300;
+      }
+    }
+  }
+  .load_more {
+    @include size($w: 100%, $h: auto, $p: 20px 0);
+    text-align: center;
+    button {
+      background: $point-color;
+      color: #fff;
+      padding: 10px 50px;
+    }
+  }
+}

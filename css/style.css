@@ -428,3 +428,46 @@ section.join .form_box .login_form .submit_info span a {
   color: #fff;
   padding: 10px 50px;
 }
+
+.pro_insert {
+  background: #e9eef5;
+}
+.pro_insert .detail_contents {
+  display: flex;
+  justify-content: space-between;
+}
+.pro_insert .detail_contents .detail_img {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.pro_insert .detail_contents .detail_img img {
+  width: 100%;
+}
+.pro_insert .detail_tab_btns {
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  display: flex;
+}
+.pro_insert .detail_tab_btns span {
+  width: 40px;
+  height: 40px;
+  background: #59ab6e;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.pro_insert .detail_tab_btns span img {
+  width: 100%;
+}
+.pro_insert .detail_txt {
+  width: calc(60% - 20px);
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.pro_insert .detail_wrap {
+  background: #fff;
+}

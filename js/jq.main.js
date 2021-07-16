@@ -66,6 +66,19 @@ $(function () {
   };
   ItemHeightFit();
 
+  //detail page image tabs function
+  const detailTabs = function () {
+    $(".detail_tab_btns span").click(function () {
+      const index = $(this).index();
+
+      $(".detail_img>img").hide();
+      $(".detail_img>img").eq(index).show();
+    });
+
+    $(".detail_tab_btns span").eq(0).trigger("click");
+  };
+
+  detailTabs();
   //resize event
   $(window).resize(function () {
     ItemHeightFit();

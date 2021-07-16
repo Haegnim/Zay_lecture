@@ -296,3 +296,46 @@ section.join {
     }
   }
 }
+
+// Product Detail Page style code
+.pro_insert {
+  background: #e9eef5;
+  .detail_contents {
+    display: flex;
+    justify-content: space-between;
+    .detail_img {
+      @include size($p: 10px, $w: 40%);
+      border: 1px solid #ddd;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .detail_tab_btns {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    display: flex;
+    span {
+      width: 40px;
+      height: 40px;
+      background: #59ab6e;
+      border: 1px solid #ddd;
+      margin-right: 5px;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .detail_txt {
+    width: calc(60% - 20px);
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  .detail_wrap {
+    background: #fff;
+  }
+}

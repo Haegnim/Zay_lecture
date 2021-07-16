@@ -240,7 +240,6 @@ section.join {
     .featured_item {
       @include size($w: 33.33%, $p: 20px);
       em {
-        font-style: normal;
         font-size: 12px;
         color: #777;
       }
@@ -249,14 +248,14 @@ section.join {
       }
     }
   }
-  .like_unlike {
+  @at-root .like_unlike {
     @include size($w: 100%, $h: auto, $p: 10px 0);
     @include flex($jc: space-between);
     span {
       border: 1px solid #eee;
       padding: 5px 10px;
       font-size: 11px;
-      font-weight: normal;
+
       &:nth-child(1) {
         background: $point-color;
         color: $main-color;
@@ -337,5 +336,130 @@ section.join {
   }
   .detail_wrap {
     background: #fff;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+      font-weight: 400;
+      font-size: 25px;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .like_unlike {
+      justify-content: flex-start;
+      padding: 0;
+    }
+    .gray {
+      color: #999;
+    }
+    .size_quan {
+      .size {
+        display: flex;
+      }
+      p {
+        margin-right: 20px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+
+        b {
+          font-size: 12px;
+        }
+
+        span {
+          width: 30px;
+          height: 30px;
+          background: $point-color;
+          display: flex;
+          color: #fff;
+          border-radius: 5px;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .detail_btns {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 0 0;
+
+    button {
+      width: calc(50% - 5px);
+      padding: 10px 0;
+      background: $point-color;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}
+
+// Detail page Comments Section Style Code
+.comments {
+  .comments_tit {
+    width: 100%;
+    height: auto;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid#ddd;
+  }
+  .comment_insert {
+    margin-top: 10px;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid#ddd;
+    form {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid#ddd;
+
+      button {
+        background: $point-color;
+        color: #fff;
+        padding: 0 30px;
+      }
+    }
+    textarea {
+      font-size: 14px;
+      font-family: "Roboto", "Noto Sans KR", sans-serif;
+      width: 80%;
+      height: 100%;
+      &::placeholder {
+        color: #999;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .comment_contents {
+    margin-top: 50px;
+    padding: 10px 0;
+    .comments_tit {
+      border-bottom: 0;
+    }
+    .comment_text {
+      display: flex;
+      justify-content: space-between;
+      button {
+        background: $point-color;
+        color: #fff;
+        padding: 5px 15px;
+      }
+    }
+  }
+  .loop_contents {
+    border-bottom: 1px solid #ddd;
+    margin-top: 20px;
   }
 }

@@ -360,7 +360,7 @@ section.join .form_box .login_form .submit_info span a {
 }
 .featured .featured_img {
   border: 1px solid #efefef;
-  height: 350px;
+  height: auto;
   overflow: hidden;
 }
 .featured .featured_box {
@@ -422,7 +422,8 @@ section.join .form_box .login_form .submit_info span a {
   padding: 20px 0;
   text-align: center;
 }
-.featured .load_more button {
+.featured .load_more button,
+.featured .load_more a {
   background: #59ab6e;
   color: #fff;
   padding: 10px 50px;

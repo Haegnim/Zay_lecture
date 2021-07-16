@@ -51,7 +51,23 @@ $(function () {
 
     $(".load_more button").click(function () {
       $(".featured_item:hidden").slice(0, 3).show();
+
+      if ($(".featured_item:hidden").length == 0) {
+        $(".load_more").html(`<a href="#">전체보기</a>`);
+      }
     });
   };
   loadMore();
+
+  //featured item images height fit to resposive width
+  const ItemHeightFit = function () {
+    const featuredImgWidth = $(".featured_img").outerWidth();
+    $(".featured_img").outerHeight(featuredImgWidth);
+  };
+  ItemHeightFit();
+
+  //resize event
+  $(window).resize(function () {
+    ItemHeightFit();
+  });
 });

@@ -542,7 +542,6 @@ section.join .form_box .login_form .submit_info span a {
 .comments .comment_insert {
   margin-top: 10px;
   padding: 10px 10px 10px 0;
-  border-bottom: 1px solid #ddd;
 }
 .comments .comment_insert form {
   display: flex;
@@ -582,11 +581,15 @@ section.join .form_box .login_form .submit_info span a {
 .comments .comment_contents .comment_text {
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
 }
 .comments .comment_contents .comment_text button {
   background: #59ab6e;
   color: #fff;
   padding: 5px 15px;
+}
+.comments .comment_contents .comment_text form {
+  width: 80%;
 }
 .comments .loop_contents {
   border-bottom: 1px solid #ddd;

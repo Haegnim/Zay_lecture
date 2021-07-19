@@ -417,7 +417,7 @@ section.join {
   .comment_insert {
     margin-top: 10px;
     padding: 10px 10px 10px 0;
-    border-bottom: 1px solid#ddd;
+    // border-bottom: 1px solid#ddd;
     form {
       display: flex;
       justify-content: space-between;
@@ -449,13 +449,23 @@ section.join {
       border-bottom: 0;
     }
     .comment_text {
+      // width: 80%;
       display: flex;
       justify-content: space-between;
+      padding: 10px 0;
       button {
         background: $point-color;
         color: #fff;
         padding: 5px 15px;
       }
+      form {
+        width: 80%;
+      }
+      // textarea {
+      //   width: 100%;
+      //   font-family: "Roboto", "Noto Sans KR", sans-serif;
+      //   font-size: 14px;
+      // }
     }
   }
   .loop_contents {

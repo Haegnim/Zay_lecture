@@ -119,47 +119,66 @@
           <span>상품평</span>
           <span><em>15</em><em> Comments</em></span>
         </div>
+
         <div class="comment_insert">
-          <form action="#" metthod="post" name="comment_form">
+          <form action="/zay/php/comment_insert.php?pro_idx=<?=$pro_idx?>&pro_writer=<?=$userid?>" method="post"
+            name="comment_form">
             <textarea type="text" placeholder="상품평을 입력해 주세요." name="comment_txt"></textarea>
-            <button type="button">입력</button>
+            <?php if(!$userid){?>
+            <button type="button" onclick="plzLogin()">입력</button>
+            <?php }else{?>
+            <button type="button" onclick="insertTxt()">입력</button>
+            <?php }?>
           </form>
         </div>
         <div class="comment_contents">
+          <?php
+              include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
+              $sql_rev = "SELECT * FROM ZAY_REVIEW WHERE ZAY_pro_rev_con_idx=$pro_idx ORDER BY ZAY_pro_rev_idx DESC";
+
+              $rev_result = mysqli_query($dbConn, $sql_rev);
+
+              while($rev_row = mysqli_fetch_array($rev_result)){
+                $rev_writer = $rev_row['ZAY_pro_rev_id'];
+                $rev_reg = $rev_row['ZAY_pro_rev_reg'];
+                $rev_txt = $rev_row['ZAY_pro_rev_txt'];
+                $rev_pro_idx = $rev_row['ZAY_pro_rev_con_idx'];
+
+              ?>
           <!-- loop start -->
           <div class="loop_contents">
+
+
             <div class="comments_tit">
-              <span>marshall36</span>
-              <span>2021-07-16 14:36:15</span>
+              <span><?=$rev_writer?></span>
+              <span><?=$rev_reg?></span>
             </div>
-            <div class="comments_texts">
-              <span class="txt">
-                <em>상품이 별로에요. 배송도 느려요.</em>
-              </span>
+            <div class="comment_text">
+              <form action="#">
+                <em><?=$rev_txt?></em>
+                <!-- <textarea readonly>상품이 별로에요. 배송도 느려요.</textarea> -->
+              </form>
+              <?php if(!$userid){?>
+              <input type="hidden">
+              <?php }else{ 
+                    if($userid != $rev_writer){
+              ?>
+              <input type="hidden">
+              <?php
+                    } else {
+              ?>
               <span class="comment_btns">
                 <button type="button">수정</button>
                 <button type="button">삭제</button>
               </span>
+              <?php
+                    }
+                  }
+              ?>
             </div>
           </div>
           <!-- loop end -->
-          <!-- loop start -->
-          <div class="loop_contents">
-            <div class="comments_tit">
-              <span>limp43</span>
-              <span>2021-07-16 14:36:15</span>
-            </div>
-            <div class="comments_texts">
-              <span class="txt">
-                <em>상품이 기깔나요</em>
-              </span>
-              <!-- <span class="comment_btns">
-                <button type="button">수정</button>
-                <button type="button">삭제</button>
-              </span> -->
-            </div>
-          </div>
-          <!-- loop end -->
+          <?php }?>
         </div>
 
       </div>
@@ -171,6 +190,21 @@
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
+  <script>
+  function plzLogin() {
+    alert('로그인 후 이용해 주세요.');
+    return false;
+  };
+
+  function insertTxt() {
+    if (!document.comment_form.comment_txt.value) {
+      alert('상품평을 입력해 주세요.');
+      return;
+    }
+
+    document.comment_form.submit();
+  };
+  </script>
 
 
 </body>

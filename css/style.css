@@ -587,9 +587,17 @@ section.join .form_box .login_form .submit_info span a {
   background: #59ab6e;
   color: #fff;
   padding: 5px 15px;
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
 }
-.comments .comment_contents .comment_text form {
+.comments .comment_contents .comment_text button.rev_send {
+  display: none;
+}
+.comments .comment_contents .comment_text textarea {
   width: 80%;
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  display: none;
 }
 .comments .loop_contents {
   border-bottom: 1px solid #ddd;

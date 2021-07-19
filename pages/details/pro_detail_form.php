@@ -117,7 +117,14 @@
       <div class="center">
         <div class="comments_tit">
           <span>상품평</span>
-          <span><em>15</em><em> Comments</em></span>
+          <?php
+          include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
+          $sql_rev = "SELECT * FROM ZAY_REVIEW WHERE ZAY_pro_rev_con_idx=$pro_idx ORDER BY ZAY_pro_rev_idx DESC";
+
+          $rev_result = mysqli_query($dbConn, $sql_rev);
+          $rev_total = mysqli_num_rows($rev_result);
+          ?>
+          <span><em><?=$rev_total?></em><em> Comments</em></span>
         </div>
 
         <div class="comment_insert">
@@ -132,13 +139,12 @@
           </form>
         </div>
         <div class="comment_contents">
-          <?php
-              include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
-              $sql_rev = "SELECT * FROM ZAY_REVIEW WHERE ZAY_pro_rev_con_idx=$pro_idx ORDER BY ZAY_pro_rev_idx DESC";
 
-              $rev_result = mysqli_query($dbConn, $sql_rev);
+          <?php
+
 
               while($rev_row = mysqli_fetch_array($rev_result)){
+                $rev_idx = $rev_row['ZAY_pro_rev_idx'];
                 $rev_writer = $rev_row['ZAY_pro_rev_id'];
                 $rev_reg = $rev_row['ZAY_pro_rev_reg'];
                 $rev_txt = $rev_row['ZAY_pro_rev_txt'];
@@ -147,35 +153,36 @@
               ?>
           <!-- loop start -->
           <div class="loop_contents">
-
-
             <div class="comments_tit">
               <span><?=$rev_writer?></span>
               <span><?=$rev_reg?></span>
             </div>
-            <div class="comment_text">
-              <form action="#">
-                <em><?=$rev_txt?></em>
-                <!-- <textarea readonly>상품이 별로에요. 배송도 느려요.</textarea> -->
-              </form>
-              <?php if(!$userid){?>
-              <input type="hidden">
-              <?php }else{ 
+            <form action="/zay/php/comment_update.php?pro_idx=<?=$rev_idx?>&pro_writer=<?=$rev_writer?>" method="post">
+              <div class="comment_text">
+                <em class="rev_txt"><?=$rev_txt?></em>
+                <textarea class="rev_update_txt" name="rev_update_txt"><?=$rev_txt?></textarea>
+
+                <?php if(!$userid){?>
+                <input type="hidden">
+                <?php }else{ 
                     if($userid != $rev_writer){
-              ?>
-              <input type="hidden">
-              <?php
+                    ?>
+                <input type="hidden">
+                <?php
                     } else {
-              ?>
-              <span class="comment_btns">
-                <button type="button">수정</button>
-                <button type="button">삭제</button>
-              </span>
-              <?php
+                    ?>
+                <span class="comment_btns">
+                  <button type="submit" class="rev_send">보내기</button>
+                  <button type="button" class="rev_update">수정</button>
+                  <button type="button" class="rev_delete" value="<?=$rev_idx?>">삭제</button>
+                  <input type="hidden" value="<?=$rev_writer?>">
+                </span>
+                <?php
                     }
                   }
-              ?>
-            </div>
+                  ?>
+              </div>
+            </form>
           </div>
           <!-- loop end -->
           <?php }?>
@@ -190,6 +197,39 @@
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
+
+  <script>
+  $(function() {
+    $(".rev_update").click(function() {
+      $(this).toggleClass("on");
+
+      if ($(this).hasClass("on")) {
+        $(this).text('수정취소');
+        $(this).prev(".rev_send").show();
+        $(this).parent(".comment_btns").siblings(".rev_txt").hide();
+        $(this).parent(".comment_btns").siblings(".rev_update_txt").show();
+      } else {
+        $(this).text('수정');
+        $(this).prev(".rev_send").hide();
+        $(this).parent(".comment_btns").siblings(".rev_txt").show();
+        $(this).parent(".comment_btns").siblings(".rev_update_txt").hide();
+      };
+    });
+    $(".rev_delete").click(function() {
+      const confirmCheck = confirm('정말 삭제하시겠습니까?');
+
+      // console.log(confirmCheck);
+
+      if (!confirmCheck) {
+        return false;
+      } else {
+        const del_val = $(this).val();
+        const pro_writer = $(this).next("input").val();
+        location.href = `/zay/php/comment_delete.php?del_key=${del_val}&pro_writer=${pro_writer}`;
+      }
+    });
+  });
+  </script>
   <script>
   function plzLogin() {
     alert('로그인 후 이용해 주세요.');

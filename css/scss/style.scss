@@ -457,15 +457,22 @@ section.join {
         background: $point-color;
         color: #fff;
         padding: 5px 15px;
+        font-family: "Roboto", "Noto Sans KR", sans-serif;
+
+        &.rev_send {
+          display: none;
+        }
       }
-      form {
-        width: 80%;
-      }
-      // textarea {
-      //   width: 100%;
-      //   font-family: "Roboto", "Noto Sans KR", sans-serif;
-      //   font-size: 14px;
+      // form {
+      //   width: 80%;
       // }
+      textarea {
+        width: 80%;
+        font-family: "Roboto", "Noto Sans KR", sans-serif;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        display: none;
+      }
     }
   }
   .loop_contents {

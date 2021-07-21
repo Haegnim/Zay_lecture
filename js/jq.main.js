@@ -79,8 +79,23 @@ $(function () {
   };
 
   detailTabs();
+
+  //디테일 페이지 이미지에 맞춰 테두리 높이 변경
+  const detailImgH = function () {
+    const imgHeight = $(".detail_img_item").outerHeight();
+    const btnsHeight = $(".detail_tab_btns").outerHeight();
+
+    $(".detail_img").height(imgHeight + btnsHeight);
+  };
+
+  detailImgH();
+
   //resize event
   $(window).resize(function () {
-    ItemHeightFit();
+    setTimeout(function () {
+      //리사이즈, 스크롤 이벤트 시 쓰로틀링
+      ItemHeightFit();
+      detailImgH();
+    }, 150);
   });
 });

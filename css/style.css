@@ -392,14 +392,8 @@ section.join .form_box .login_form .submit_info span a {
   border: 1px solid #eee;
   padding: 5px 10px;
   font-size: 11px;
-}
-.like_unlike span:nth-child(1) {
-  background: #59ab6e;
-  color: #fff;
-}
-.like_unlike span:nth-child(2) {
-  background: lightcoral;
-  color: #fff;
+  margin: 0 2px;
+  cursor: pointer;
 }
 
 .featured .featured_txt {
@@ -552,6 +546,7 @@ section.join .form_box .login_form .submit_info span a {
   background: #59ab6e;
   color: #fff;
   padding: 0 30px;
+  margin: 3px;
 }
 .comments .comment_insert textarea {
   font-size: 14px;

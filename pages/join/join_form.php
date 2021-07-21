@@ -39,8 +39,8 @@
           <form action="/zay/php/insert_mem.php" method="post" name="mem_form" enctype="multipart/form-data"
             class="mem_form com_form">
             <p>
-              <label for="mem_id">아이디</label><input type="text" name="mem_id" id="mem_id" placeholder="아이디">
-              <button type="button">중복체크</button>
+              <label for="mem_id">아이디</label><input type="text" name="mem_id" id="mem_id" placeholder="아이디" id="mem_id">
+              <button type="button" class="id_check">중복체크</button>
             </p>
             <!-- 아이디 중복체크 -->
             <p>
@@ -73,9 +73,39 @@
   </div>
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(function() {
+
+    $(".mem_id").click(function() {
+      const id_val = $("#mem_id").val();
+      // alert(id_val);
+
+      $.ajax({
+        url: "/zay/php/id_check.php",
+        type: 'get',
+        data: {
+          id_val: id_val
+        },
+        success: function(data) {
+          alert(data);
+        }
+      });
+    });
+  });
+  </script>
   <script src="/zay/js/jq.main.js"></script>
   <script>
   const submitBtn = document.querySelector("#submit_btn");
+  const idCheck = document.querySelector(".id_check");
+  let check = false;
+
+  function checkId() {
+    check = true;
+  }
+
+  idCheck.addEventListener('click', checkId);
+
+  console.log(check);
 
   submitBtn.addEventListener('click', function() {
     if (!document.mem_form.mem_id.value) {

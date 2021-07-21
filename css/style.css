@@ -39,6 +39,7 @@ header {
   box-shadow: 0 0 5px #ccc;
   padding: 20px 0;
   transition: all 0.4s;
+  position: relative;
 }
 header .menu_items {
   display: flex;
@@ -597,4 +598,45 @@ section.join .form_box .login_form .submit_info span a {
 .comments .loop_contents {
   border-bottom: 1px solid #ddd;
   margin-top: 20px;
+}
+
+.community .comm_table {
+  width: 80%;
+  margin: auto;
+  background: #efefef;
+  padding: 20px;
+  border-radius: 10px;
+}
+.community .comm_table li {
+  padding: 8px;
+  display: flex;
+}
+.community .comm_table li span {
+  text-align: center;
+}
+.community .comm_table li span:nth-child(1) {
+  width: 10%;
+}
+.community .comm_table li span:nth-child(2) {
+  width: 15%;
+}
+.community .comm_table li span:nth-child(3) {
+  width: 50%;
+}
+.community .comm_table li span:nth-child(4) {
+  width: 15%;
+}
+.community .comm_table li span:nth-child(5) {
+  width: 10%;
+}
+.community .comm_table li.comm_tit {
+  background: #59ab6e;
+  color: #fff;
+}
+.community .comm_table li.comm_con {
+  border-bottom: 1px solid #fff;
+}
+.community .comm_table li.comm_con span:nth-child(3) {
+  text-align: left;
+  padding-left: 15px;
 }

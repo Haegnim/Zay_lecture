@@ -483,3 +483,47 @@ section.join {
     margin-top: 20px;
   }
 }
+
+.community {
+  .comm_table {
+    width: 80%;
+    margin: auto;
+    background: #efefef;
+    padding: 20px;
+    border-radius: 10px;
+    li {
+      padding: 8px;
+      display: flex;
+      span {
+        text-align: center;
+      }
+      span:nth-child(1) {
+        width: 10%;
+      }
+      span:nth-child(2) {
+        width: 15%;
+      }
+      span:nth-child(3) {
+        width: 50%;
+      }
+      span:nth-child(4) {
+        width: 15%;
+      }
+      span:nth-child(5) {
+        width: 10%;
+      }
+
+      &.comm_tit {
+        background: $point-color;
+        color: $main-color;
+      }
+      &.comm_con {
+        border-bottom: 1px solid #fff;
+      }
+      &.comm_con span:nth-child(3) {
+        text-align: left;
+        padding-left: 15px;
+      }
+    }
+  }
+}

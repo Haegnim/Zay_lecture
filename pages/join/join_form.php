@@ -73,11 +73,13 @@
   </div>
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <script>
   $(function() {
 
-    $(".mem_id").click(function() {
+    $(".id_check").click(function() {
       const id_val = $("#mem_id").val();
+      let checking = false;
       // alert(id_val);
 
       $.ajax({
@@ -88,6 +90,7 @@
         },
         success: function(data) {
           alert(data);
+          // console.log(data.checking);
         }
       });
     });
@@ -99,15 +102,13 @@
   const idCheck = document.querySelector(".id_check");
   let check = false;
 
-  function checkId() {
+  idCheck.addEventListener('click', function() {
     check = true;
-  }
+  });
 
-  idCheck.addEventListener('click', checkId);
-
-  console.log(check);
 
   submitBtn.addEventListener('click', function() {
+    console.log(check);
     if (!document.mem_form.mem_id.value) {
       alert('아이디를 입력해 주세요');
       document.mem_form.mem_id.focus();
@@ -148,7 +149,10 @@
       document.mem_form.mem_email.focus();
       return;
     }
-
+    if (!check) {
+      alert('아이디 중복체크를 해주세요');
+      return;
+    }
     document.mem_form.submit();
   });
   </script>

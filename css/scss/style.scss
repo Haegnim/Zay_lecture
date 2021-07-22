@@ -433,8 +433,6 @@ section.join {
       }
     }
     textarea {
-      font-size: 14px;
-      font-family: "Roboto", "Noto Sans KR", sans-serif;
       width: 80%;
       height: 100%;
       &::placeholder {
@@ -460,8 +458,6 @@ section.join {
         background: $point-color;
         color: #fff;
         padding: 5px 15px;
-        font-family: "Roboto", "Noto Sans KR", sans-serif;
-
         &.rev_send {
           display: none;
         }
@@ -471,8 +467,6 @@ section.join {
       // }
       textarea {
         width: 80%;
-        font-family: "Roboto", "Noto Sans KR", sans-serif;
-        font-size: 14px;
         border: 1px solid #ccc;
         display: none;
       }
@@ -485,9 +479,11 @@ section.join {
 }
 
 .community {
-  .comm_table {
+  .comm_center {
     width: 80%;
     margin: auto;
+  }
+  .comm_table {
     background: #efefef;
     padding: 20px;
     border-radius: 10px;
@@ -519,11 +515,123 @@ section.join {
       }
       &.comm_con {
         border-bottom: 1px solid #fff;
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
       &.comm_con span:nth-child(3) {
-        text-align: left;
+        justify-content: flex-start;
+        // text-align: left;
         padding-left: 15px;
       }
+    }
+  }
+  .search_paging {
+    display: flex;
+    // background: #ddd;
+    justify-content: space-between;
+    margin: 10px auto 0 auto;
+  }
+  .paging {
+    display: flex;
+    span {
+      width: 30px;
+      height: 30px;
+      background: $point-color;
+      color: $main-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      margin-left: 5px;
+      border: 1px solid $point-color;
+      &.num {
+        background: #fff;
+        color: $point-color;
+        font-size: 14px;
+      }
+    }
+  }
+  .search_form {
+    display: flex;
+    // align-items: center;
+    select {
+      border: 1px solid $point-color;
+      background: $point-color;
+      color: $main-color;
+      outline: 0;
+      border-radius: 5px 0 0 5px;
+      padding: 0 10px;
+      height: 30px;
+    }
+    input {
+      border: 1px solid $point-color;
+      margin: 0 3px;
+      height: 30px;
+    }
+    button {
+      font-size: 20px;
+      color: #fff;
+      background: $point-color;
+      border: 1px solid $point-color;
+      padding: 0 15px;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  .write {
+    margin-top: 50px;
+    h4 {
+      font-size: 16px;
+      margin: 10px 20px 10px 0;
+      color: #777;
+      font-weight: 400;
+      border-left: 3px solid $point-color;
+      padding-left: 20px;
+    }
+  }
+  .write_form {
+    background: #efefef;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .write_tit {
+    display: flex;
+    justify-content: space-between;
+    label {
+      width: 20%;
+      background: $point-color;
+      color: #fff;
+      text-align: center;
+      padding: 8px 0;
+    }
+    input {
+      width: calc(80% - 5px);
+    }
+  }
+  .write_con {
+    width: 100%;
+    margin-top: 5px;
+    textarea {
+      width: 100%;
+      height: 150px;
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+  }
+  .write_btn {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    text-align: center;
+    button {
+      background: $point-color;
+      color: #fff;
+      padding: 8px 25px;
+      border-radius: 5px;
     }
   }
 }

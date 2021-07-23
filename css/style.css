@@ -667,6 +667,10 @@ section.join .form_box .login_form .submit_info span a {
   color: #59ab6e;
   font-size: 14px;
 }
+.community .paging span.num.active {
+  background: #59ab6e;
+  color: #fff;
+}
 .community .search_form {
   display: flex;
 }
@@ -745,7 +749,8 @@ section.join .form_box .login_form .submit_info span a {
   margin-top: 10px;
   text-align: center;
 }
-.community .write_btn button {
+.community .write_btn button,
+.community .write_btn a {
   background: #59ab6e;
   color: #fff;
   padding: 8px 25px;

@@ -551,6 +551,10 @@ section.join {
         background: #fff;
         color: $point-color;
         font-size: 14px;
+        &.active {
+          background: $point-color;
+          color: $main-color;
+        }
       }
     }
   }
@@ -627,7 +631,8 @@ section.join {
     height: auto;
     margin-top: 10px;
     text-align: center;
-    button {
+    button,
+    a {
       background: $point-color;
       color: #fff;
       padding: 8px 25px;

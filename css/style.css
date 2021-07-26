@@ -595,10 +595,11 @@ section.join .form_box .login_form .submit_info span a {
   margin-top: 20px;
 }
 
-.community .comm_center {
+.comm_center {
   width: 80%;
   margin: auto;
 }
+
 .community .comm_table {
   background: #efefef;
   padding: 20px;

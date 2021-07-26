@@ -83,7 +83,63 @@
         </div>
       </div>
     </section>
-
+    <section class="comments">
+      <div class="center">
+        <div class="comments_tit">
+          <?php
+          $sql2 = "SELECT * FROM ZAY_reply WHERE ZAY_comm_reply_idx=$detail_idx ORDER BY ZAY_reply_idx DESC";
+          $reply_result=mysqli_query($dbConn, $sql2);
+          $reply_total = mysqli_num_rows($reply_result);
+          ?>
+          <span>답글</span>
+          <span><em><?=$reply_total?></em><em>Replies</em></span>
+        </div>
+        <!-- start comment_insert -->
+        <div class="comment_insert">
+          <form action="/zay/php/reply_insert.php?detail_idx=<?=$detail_idx?>" method="post" name="reply_form">
+            <textarea type="text" placeholder="답글을 입력해 주세요." name="reply_txt"></textarea>
+            <?php if(!$userid){ ?>
+            <button type="button" onclick="plzLogin()">입력</button>
+            <?php }else{ ?>
+            <button type="button" onclick="insertTxt()">입력</button>
+            <?php } ?>
+          </form>
+        </div>
+        <!-- end of comment_insert -->
+        <!-- start comment_contents -->
+        <div class="comment_contents">
+          <?php
+          while($reply_row = mysqli_fetch_array($reply_result)){
+            $reply_idx = $reply_row['ZAY_reply_idx'];
+            $reply_writer = $reply_row['ZAY_reply_id'];
+            $reply_reg = $reply_row['ZAY_reply_reg'];
+            $reply_con = $reply_row['ZAY_reply_con'];
+          ?>
+          <!-- loop start -->
+          <div class="loop_contents">
+            <div class="comments_tit">
+              <span><?=$reply_writer?></span>
+              <span><?=$reply_reg?></span>
+            </div>
+            <form action="#" method="post">
+              <div class="comment_text">
+                <em class="rep_txt"><?=$reply_con?></em>
+                <textarea class="rep_update_txt" name="rep_update_txt">아니지만</textarea>
+                <span class="comment_btns">
+                  <button type="submit" class="rep_send">보내기</button>
+                  <button type="button" class="rep_update">수정</button>
+                  <button type="button" class="rep_delete" value="">삭제</button>
+                  <input type="hidden" value="">
+                </span>
+              </div>
+            </form>
+          </div>
+          <!-- loop end -->
+          <?php }?>
+        </div>
+        <!-- end of comment_contents -->
+      </div>
+    </section>
     <?php
     include $_SERVER["DOCUMENT_ROOT"]."/zay/include/footer.php";
     ?>
@@ -92,25 +148,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
   <script>
-  const upBtn = document.querySelector('#update');
-  upBtn.addEventListener("click", function() {
-    document.write_form.submit();
-  });
+  // const upBtn = document.querySelector('#update');
+  // upBtn.addEventListener("click", function() {
+  //   document.write_form.submit();
+  // });
 
   function backGo() {
     history.go(-1);
   };
 
-  function sendWrite() {
-    if (!document.write_form.write_input.value) {
-      alert('제목을 입력해 주세요.');
+  function plzLogin() {
+    alert('로그인 후 이용해 주세요.');
+    return false;
+  };
+
+  function insertTxt() {
+    if (!document.reply_form.reply_txt.value) {
+      alert('댓글을 입력해 주세요.');
       return;
-    };
-    if (!document.write_form.write_con.value) {
-      alert('내용을 입력해 주세요.');
-      return;
-    };
-    document.write_form.submit();
+    }
+    document.reply_form.submit();
+
   }
   </script>
 </body>

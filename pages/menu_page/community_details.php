@@ -108,6 +108,7 @@
         <!-- end of comment_insert -->
         <!-- start comment_contents -->
         <div class="comment_contents">
+          <!-- loop start -->
           <?php
           while($reply_row = mysqli_fetch_array($reply_result)){
             $reply_idx = $reply_row['ZAY_reply_idx'];
@@ -115,27 +116,33 @@
             $reply_reg = $reply_row['ZAY_reply_reg'];
             $reply_con = $reply_row['ZAY_reply_con'];
           ?>
-          <!-- loop start -->
           <div class="loop_contents">
             <div class="comments_tit">
               <span><?=$reply_writer?></span>
               <span><?=$reply_reg?></span>
             </div>
-            <form action="#" method="post">
+
+            <form action="/zay/php/reply_update.php?reply_idx=<?=$reply_idx?>&reply_id=<?=$reply_writer?>"
+              method="post">
               <div class="comment_text">
                 <em class="rep_txt"><?=$reply_con?></em>
-                <textarea class="rep_update_txt" name="rep_update_txt">아니지만</textarea>
+                <textarea class="rep_update_txt" name="rep_update_txt"><?=$reply_con?></textarea>
+                <?php if(!$userid || $userid != $reply_writer){ ?>
+                <input type="hidden">
+                <?php }else{?>
                 <span class="comment_btns">
                   <button type="submit" class="rep_send">보내기</button>
                   <button type="button" class="rep_update">수정</button>
-                  <button type="button" class="rep_delete" value="">삭제</button>
-                  <input type="hidden" value="">
+                  <button type="button" class="rep_delete" value="<?=$reply_idx?>">삭제</button>
+                  <input type="hidden" value="<?=$reply_writer?>">
                 </span>
+                <?php } ?>
+
               </div>
             </form>
           </div>
-          <!-- loop end -->
           <?php }?>
+          <!-- loop end -->
         </div>
         <!-- end of comment_contents -->
       </div>
@@ -152,6 +159,7 @@
   // upBtn.addEventListener("click", function() {
   //   document.write_form.submit();
   // });
+
 
   function backGo() {
     history.go(-1);
@@ -170,6 +178,39 @@
     document.reply_form.submit();
 
   }
+  </script>
+  <script>
+  $(function() {
+    $(".rep_send").hide();
+    $(".rep_update").click(function() {
+      $(this).toggleClass("on");
+
+      if ($(this).hasClass("on")) {
+        $(this).text('수정취소');
+        $(this).prev(".rep_send").show();
+        $(this).parent(".comment_btns").siblings(".rep_txt").hide();
+        $(this).parent(".comment_btns").siblings(".rep_update_txt").show();
+      } else {
+        $(this).text('수정');
+        $(this).prev(".rep_send").hide();
+        $(this).parent(".comment_btns").siblings(".rep_txt").show();
+        $(this).parent(".comment_btns").siblings(".rep_update_txt").hide();
+      };
+    });
+    $(".rep_delete").click(function() {
+      const confirmCheck = confirm('정말 삭제하시겠습니까?');
+
+      // console.log(confirmCheck);
+
+      if (!confirmCheck) {
+        return false;
+      } else {
+        const del_val = $(this).val();
+        const rep_writer = $(this).next("input").val();
+        location.href = `/zay/php/reply_delete.php?del_key=${del_val}&rep_writer=${rep_writer}`;
+      }
+    });
+  });
   </script>
 </body>
 

@@ -29,19 +29,19 @@
   section.join .form_box .mem_form {
     width: 70%;
   }
-  .featured .featured_txt p {
+  .featured_txt p {
     display: none;
   }
-  .featured .like_unlike {
+  .like_unlike {
     flex-direction: column;
     padding: 5px 0 10px 0;
   }
-  .featured .like_icons {
+  .like_icons {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
   }
-  .featured .like_icons span {
+  .like_icons span {
     text-align: center;
     width: 50%;
   }
@@ -132,7 +132,7 @@
     font-size: 12px;
   }
 
-  .featured .featured_box .featured_item {
+  .featured_box .featured_item {
     width: 50%;
     padding: 10px;
   }
@@ -300,7 +300,7 @@
     display: block;
     width: 100%;
   }
-  .featured .featured_box .featured_item {
+  .featured_box .featured_item {
     width: 100%;
   }
   .pro_insert .detail_contents .detail_img {

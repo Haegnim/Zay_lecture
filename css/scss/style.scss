@@ -22,7 +22,13 @@ $gradient: linear-gradient(
   padding: $p;
   margin: $m;
 }
-
+@mixin font($s: null, $w: null, $c: null) {
+  font: {
+    size: $s;
+    weight: $w;
+  }
+  color: $c;
+}
 body {
   width: 100%;
   background: $main-color;
@@ -32,11 +38,10 @@ h1 {
 }
 
 //top
-// header style code
+/*header style code*/
 @import "header";
 
-// mobile menu icon style
-
+/*mobile menu icon style*/
 .slider {
   width: 100%;
   // height: 60vh;
@@ -54,16 +59,13 @@ h1 {
   }
   .slider_txt {
     h2 {
-      font-size: 50px;
-      font-weight: 100;
+      @include font($s: 50px, $w: 100);
     }
     h4 {
-      font-size: 30px;
-      font-weight: 300;
+      @include font($s: 30px, $w: 300);
     }
     p {
-      font-size: 18px;
-      font-weight: 300;
+      @include font($s: 18px, $w: 300);
       margin-top: 15px;
     }
   }
@@ -101,62 +103,10 @@ h1 {
     }
   }
 }
+/*Footer Section Style Code*/
+@import "footer";
 
-// Footer Section Style Code
-footer {
-  background: $footer-color;
-  color: $font-color;
-  @include size($w: 100%, $h: auto, $p: 80px 0 0 0);
-
-  .sub_menus {
-    display: flex;
-    & > div {
-      width: 33.33%;
-    }
-  }
-
-  ul {
-    padding: 20px 0;
-  }
-  a {
-    color: $font-color;
-    line-height: 2em;
-    font: {
-      size: 16px;
-      weight: 300;
-    }
-    i {
-      margin-right: 10px;
-    }
-  }
-  h3 {
-    font: {
-      size: 30px;
-      weight: 500;
-    }
-    color: $font-color;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid $footer-linecolor;
-  }
-  & > .center div.shop h3 {
-    color: $point-color;
-  }
-  .company_info {
-    background: #1d242d;
-    p {
-      font: {
-        size: 16px;
-        weight: 300;
-      }
-      padding: 20px 0;
-      // max-width: 1230px;
-      // width: 100%;
-      // margin: auto;
-    }
-  }
-}
-
-// Join Page Style Code
+/*Join Page Style Code*/
 section.join {
   .form_box {
     @include size($w: 100%, $h: auto);
@@ -223,190 +173,76 @@ section.join {
 }
 .featured {
   background: #e9eef5;
-  .item_frame {
-    background: $main-color;
-    padding: 10px;
-    box-shadow: 0 0 8px #ccc;
-  }
-  .featured_img {
-    border: 1px solid #efefef;
-    height: auto;
-    overflow: hidden;
-  }
-  .featured_box {
-    @include size($w: 100%, $h: auto, $m: 30px 0);
-    @include flex();
-    flex-wrap: wrap;
-    .featured_item {
-      @include size($w: 33.33%, $p: 20px);
-      em {
-        font-size: 12px;
-        color: #777;
-      }
-      img {
-        width: 100%;
-      }
-    }
-  }
-  @at-root .like_unlike {
-    @include size($w: 100%, $h: auto, $p: 10px 0);
-    @include flex($jc: space-between);
-    span {
-      border: 1px solid #eee;
-      padding: 5px 10px;
-      font-size: 11px;
-      margin: 0 2px;
-      cursor: pointer;
+}
+.item_frame {
+  background: $main-color;
+  padding: 10px;
+  box-shadow: 0 0 8px #ccc;
+}
+.featured_img {
+  border: 1px solid #efefef;
+  height: auto;
+  overflow: hidden;
+}
 
-      // &:nth-child(1) {
-      //   background: $point-color;
-      //   color: $main-color;
-      // }
-      // &:nth-child(2) {
-      // background: lightcoral;
-      // color: $main-color;
-      // }
-    }
+.load_more {
+  @include size($w: 100%, $h: auto, $p: 20px 0);
+  text-align: center;
+  button,
+  a {
+    background: $point-color;
+    color: $main-color;
+    padding: 10px 50px;
   }
-  .featured_txt {
-    width: 100%;
-    color: #212529;
-
-    h3 {
-      font: {
-        size: 18px;
-        weight: 400;
-      }
+}
+.featured_box {
+  @include size($w: 100%, $h: auto, $m: 30px 0);
+  @include flex();
+  flex-wrap: wrap;
+  .featured_item {
+    @include size($w: 33.33%, $p: 20px);
+    em {
+      @include font($s: 12px, $c: #777);
     }
-    p {
-      padding: 10px 0;
-      font: {
-        size: 14px;
-        weight: 300;
-      }
-    }
-  }
-  .load_more {
-    @include size($w: 100%, $h: auto, $p: 20px 0);
-    text-align: center;
-    button,
-    a {
-      background: $point-color;
-      color: $main-color;
-      padding: 10px 50px;
+    img {
+      width: 100%;
     }
   }
 }
+.like_unlike {
+  @include size($w: 100%, $h: auto, $p: 10px 0);
+  @include flex($jc: space-between);
+  span {
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    font-size: 11px;
+    margin: 0 2px;
+    cursor: pointer;
 
-// Product Detail Page style code
-.pro_insert {
-  background: #e9eef5;
-  .detail_contents {
-    display: flex;
-    justify-content: space-between;
-    .detail_img {
-      @include size($p: 10px, $w: 40%);
-      border: 1px solid #ddd;
-      img {
-        width: 100%;
-      }
-    }
-  }
-  .detail_tab_btns {
-    width: 100%;
-    height: auto;
-    padding-top: 10px;
-    display: flex;
-    span {
-      width: 40px;
-      height: 40px;
-      background: #59ab6e;
-      border: 1px solid #ddd;
-      margin-right: 5px;
-      cursor: pointer;
-      overflow: hidden;
-      img {
-        width: 100%;
-      }
-    }
-  }
-  .detail_txt {
-    width: calc(60% - 20px);
-    height: auto;
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  .detail_wrap {
-    background: #fff;
-    height: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h2 {
-      font-weight: 400;
-      font-size: 25px;
-    }
-    h3 {
-      font-weight: 400;
-      font-size: 20px;
-      margin-top: 20px;
-    }
-    p {
-      margin: 10px 0;
-    }
-    .like_unlike {
-      justify-content: flex-start;
-      padding: 0;
-    }
-    .gray {
-      color: #999;
-    }
-    .size_quan {
-      .size {
-        display: flex;
-      }
-      p {
-        margin-right: 20px;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-
-        b {
-          font-size: 12px;
-        }
-
-        span {
-          width: 30px;
-          height: 30px;
-          background: $point-color;
-          display: flex;
-          color: #fff;
-          border-radius: 5px;
-          align-items: center;
-          justify-content: center;
-          margin: 0 5px;
-          font-size: 14px;
-        }
-      }
-    }
-  }
-  .detail_btns {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0 0 0;
-
-    button {
-      width: calc(50% - 5px);
-      padding: 10px 0;
-      background: $point-color;
-      color: #fff;
-      border-radius: 5px;
-    }
+    // &:nth-child(1) {
+    //   background: $point-color;
+    //   color: $main-color;
+    // }
+    // &:nth-child(2) {
+    // background: lightcoral;
+    // color: $main-color;
+    // }
   }
 }
+.featured_txt {
+  width: 100%;
+  color: #212529;
+  h3 {
+    @include font($s: 18px, $w: 400);
+  }
+  p {
+    padding: 10px 0;
+    @include font($s: 14px, $w: 300);
+  }
+}
+
+/*Product Detail Page style code*/
+@import "product_detial";
 
 // Detail page Comments Section Style Code
 .comments {
@@ -636,6 +472,29 @@ section.join {
       color: #fff;
       padding: 8px 25px;
       border-radius: 5px;
+    }
+  }
+}
+
+.shop {
+  .shop_btns {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    a {
+      background: $point-color;
+      color: $main-color;
+      border-radius: 5px;
+      padding: 10px 25px;
+      display: inline-block;
+      border: 1px solid $point-color;
+      &.active {
+        background: #fff;
+        color: $point-color;
+      }
     }
   }
 }

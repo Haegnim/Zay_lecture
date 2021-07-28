@@ -1,0 +1,52 @@
+footer {
+  background: $footer-color;
+  color: $font-color;
+  @include size($w: 100%, $h: auto, $p: 80px 0 0 0);
+
+  .sub_menus {
+    display: flex;
+    & > div {
+      width: 33.33%;
+    }
+  }
+
+  ul {
+    padding: 20px 0;
+  }
+  a {
+    color: $font-color;
+    line-height: 2em;
+    font: {
+      size: 16px;
+      weight: 300;
+    }
+    i {
+      margin-right: 10px;
+    }
+  }
+  h3 {
+    font: {
+      size: 30px;
+      weight: 500;
+    }
+    color: $font-color;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid $footer-linecolor;
+  }
+  & > .center div.shop h3 {
+    color: $point-color;
+  }
+  .company_info {
+    background: #1d242d;
+    p {
+      font: {
+        size: 16px;
+        weight: 300;
+      }
+      padding: 20px 0;
+      // max-width: 1230px;
+      // width: 100%;
+      // margin: auto;
+    }
+  }
+}

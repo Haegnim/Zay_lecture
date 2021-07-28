@@ -1,0 +1,108 @@
+.pro_insert {
+  background: #e9eef5;
+  .detail_contents {
+    display: flex;
+    justify-content: space-between;
+    .detail_img {
+      @include size($p: 10px, $w: 40%);
+      border: 1px solid #ddd;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .detail_tab_btns {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    display: flex;
+    span {
+      width: 40px;
+      height: 40px;
+      background: #59ab6e;
+      border: 1px solid #ddd;
+      margin-right: 5px;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .detail_txt {
+    width: calc(60% - 20px);
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  .detail_wrap {
+    background: #fff;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+      font-weight: 400;
+      font-size: 25px;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .like_unlike {
+      justify-content: flex-start;
+      padding: 0;
+    }
+    .gray {
+      color: #999;
+    }
+    .size_quan {
+      .size {
+        display: flex;
+      }
+      p {
+        margin-right: 20px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+
+        b {
+          font-size: 12px;
+        }
+
+        span {
+          width: 30px;
+          height: 30px;
+          background: $point-color;
+          display: flex;
+          color: #fff;
+          border-radius: 5px;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .detail_btns {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 0 0;
+
+    button {
+      width: calc(50% - 5px);
+      padding: 10px 0;
+      background: $point-color;
+      color: #fff;
+      border-radius: 5px;
+    }
+  }
+}

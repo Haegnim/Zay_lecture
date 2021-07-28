@@ -53,7 +53,9 @@ $(function () {
       $(".featured_item:hidden").slice(0, 3).show();
 
       if ($(".featured_item:hidden").length == 0) {
-        $(".load_more").html(`<a href="#">전체보기</a>`);
+        $(".load_more").html(
+          `<a href="/zay/pages/menu_page/shop.php?key=all">전체보기</a>`
+        );
       }
     });
   };
@@ -98,4 +100,15 @@ $(function () {
       detailImgH();
     }, 150);
   });
+
+  // $("#price").click(function () {
+  //   $(this).addClass("on");
+  //   if ($(this).hasClass("on")) {
+  //     $(this).html('높은가격순<i class="fa fa-chevron-up"></i>');
+  //     location.href = "/zay/pages/menu_page/shop.php?key=up_price";
+  //   } else {
+  //     $(this).html('낮은가격순<i class="fa fa-chevron-down"></i>');
+  //     location.href = "/zay/pages/menu_page/shop.php?key=down_price";
+  //   }
+  // });
 });

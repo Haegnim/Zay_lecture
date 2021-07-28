@@ -106,3 +106,70 @@
     }
   }
 }
+/*Detail page Comments Section Style Code*/
+.comments {
+  .comments_tit {
+    width: 100%;
+    height: auto;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid#ddd;
+  }
+  .comment_insert {
+    @include size($m: 10px 0 0 0, $p: 10px 10px 10px 0);
+    form {
+      @include flex($jc: space-between);
+      border: 1px solid#ddd;
+
+      button {
+        background: $point-color;
+        color: #fff;
+        @include size($m: 3px, $p: 0 30px);
+      }
+    }
+    textarea {
+      @include size($w: 80%, $h: 100%);
+
+      width: 80%;
+      height: 100%;
+      &::placeholder {
+        color: #999;
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .comment_contents {
+    @include size($m: 50px 0 0 0, $p: 10px 0);
+    .comments_tit {
+      border-bottom: 0;
+    }
+    .comment_text {
+      @include flex($jc: space-between);
+      padding: 10px 0;
+      button {
+        background: $point-color;
+        color: #fff;
+        padding: 5px 15px;
+        &.rev_send {
+          display: none;
+        }
+      }
+      // form {
+      //   width: 80%;
+      // }
+      textarea {
+        width: 80%;
+        border: 1px solid #ccc;
+        display: none;
+      }
+    }
+  }
+  .loop_contents {
+    border-bottom: 1px solid #ddd;
+    margin-top: 20px;
+  }
+}
+.comm_center {
+  @include size($w: 80%, $m: auto);
+}

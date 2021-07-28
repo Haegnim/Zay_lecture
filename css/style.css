@@ -355,6 +355,7 @@ section.join .form_box .login_form .submit_info span a {
   color: #fff;
 }
 
+/*Featured section Style Code*/
 .featured {
   background: #e9eef5;
 }
@@ -538,6 +539,7 @@ section.join .form_box .login_form .submit_info span a {
   border-radius: 5px;
 }
 
+/*Detail page Comments Section Style Code*/
 .comments .comments_tit {
   width: 100%;
   height: auto;
@@ -545,8 +547,8 @@ section.join .form_box .login_form .submit_info span a {
   border-bottom: 1px solid #ddd;
 }
 .comments .comment_insert {
-  margin-top: 10px;
   padding: 10px 10px 10px 0;
+  margin: 10px 0 0 0;
 }
 .comments .comment_insert form {
   display: flex;
@@ -560,6 +562,8 @@ section.join .form_box .login_form .submit_info span a {
   margin: 3px;
 }
 .comments .comment_insert textarea {
+  width: 80%;
+  height: 100%;
   width: 80%;
   height: 100%;
 }
@@ -576,8 +580,8 @@ section.join .form_box .login_form .submit_info span a {
   display: none;
 }
 .comments .comment_contents {
-  margin-top: 50px;
   padding: 10px 0;
+  margin: 50px 0 0 0;
 }
 .comments .comment_contents .comments_tit {
   border-bottom: 0;
@@ -610,6 +614,7 @@ section.join .form_box .login_form .submit_info span a {
   margin: auto;
 }
 
+/*community Page style code*/
 .community .comm_table {
   background: #efefef;
   padding: 20px;
@@ -646,8 +651,8 @@ section.join .form_box .login_form .submit_info span a {
 }
 .community .comm_table li.comm_con span {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .community .comm_table li.comm_con span:nth-child(3) {
   justify-content: flex-start;
@@ -664,13 +669,14 @@ section.join .form_box .login_form .submit_info span a {
 .community .paging span {
   width: 30px;
   height: 30px;
-  background: #59ab6e;
-  color: #fff;
+  padding: 0 10px;
+  margin: 0 0 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #59ab6e;
+  color: #fff;
   border-radius: 5px;
-  margin-left: 5px;
   border: 1px solid #59ab6e;
 }
 .community .paging span.num {
@@ -686,13 +692,13 @@ section.join .form_box .login_form .submit_info span a {
   display: flex;
 }
 .community .search_form select {
+  height: 30px;
+  padding: 0 10px;
   border: 1px solid #59ab6e;
   background: #59ab6e;
   color: #fff;
   outline: 0;
   border-radius: 5px 0 0 5px;
-  padding: 0 10px;
-  height: 30px;
 }
 .community .search_form input {
   border: 1px solid #59ab6e;
@@ -712,11 +718,11 @@ section.join .form_box .login_form .submit_info span a {
 }
 .community .write h4 {
   font-size: 16px;
-  margin: 10px 20px 10px 0;
-  color: #777;
   font-weight: 400;
+  color: #777;
+  padding: 0 0 0 20px;
+  margin: 10px 20px 10px 0;
   border-left: 3px solid #59ab6e;
-  padding-left: 20px;
 }
 .community .write_form {
   background: #efefef;
@@ -729,6 +735,8 @@ section.join .form_box .login_form .submit_info span a {
 }
 .community .write_tit label {
   width: 20%;
+  padding: 8px 0;
+  width: 20%;
   background: #59ab6e;
   color: #fff;
   text-align: center;
@@ -738,6 +746,8 @@ section.join .form_box .login_form .submit_info span a {
   width: calc(80% - 5px);
 }
 .community .write_con {
+  width: 100%;
+  margin: 5px 0 0 0;
   width: 100%;
   margin-top: 5px;
 }
@@ -757,7 +767,7 @@ section.join .form_box .login_form .submit_info span a {
 .community .write_btn {
   width: 100%;
   height: auto;
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   text-align: center;
 }
 .community .write_btn button,
@@ -771,9 +781,9 @@ section.join .form_box .login_form .submit_info span a {
 .shop .shop_btns {
   width: 100%;
   height: auto;
+  padding: 15px 0;
   display: flex;
   justify-content: space-between;
-  padding: 15px 0;
   border-bottom: 1px solid #eee;
 }
 .shop .shop_btns a {

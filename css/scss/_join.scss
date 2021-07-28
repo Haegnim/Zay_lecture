@@ -1,0 +1,64 @@
+section.join {
+  .form_box {
+    @include size($w: 100%, $h: auto);
+    @include flex($jc: center, $ai: center);
+    .mem_form,
+    .login_form {
+      background: #efefef;
+      @include size($w: 50%, $p: 20px);
+      border-radius: 10px;
+      box-shadow: 0 0 3px #ccc;
+
+      p {
+        @include size($w: 100%, $h: auto, $m: 0 0 5px 0);
+        @include flex($jc: space-between);
+        &:first-child {
+          input {
+            width: calc(50% - 10px);
+          }
+          button {
+            width: 20%;
+            background: $point-color;
+            color: $main-color;
+          }
+        }
+        &.login:first-child {
+          input {
+            width: calc(70% - 5px);
+          }
+        }
+      }
+
+      label {
+        @include size($w: 30%, $p: 10px 20px);
+        background: $point-color;
+        color: $main-color;
+        text-align: center;
+      }
+      input {
+        width: calc(70% - 5px);
+      }
+      .submit_info {
+        @include flex($jc: space-between, $ai: center);
+        @include size($p: 10px 0 0 0, $m: 20px 0 0 0);
+        // padding: 10px 0 0 0;
+        border-top: 1px solid #ddd;
+        // margin-top: 20px;
+        button {
+          background: $point-color;
+          color: $main-color;
+          padding: 10px 30px;
+        }
+        span {
+          color: #555;
+          a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: $point-color;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}

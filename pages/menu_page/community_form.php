@@ -43,7 +43,6 @@
         <!--comm_table start-->
         <div class="comm_table comm_center">
           <ul class="comm_row">
-
             <!-- ajax elements load here -->
           </ul>
         </div>

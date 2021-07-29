@@ -52,7 +52,7 @@
           <div class="filters">
             <div class="filter_tabs">
               <select onchange="location.href=this.value">
-                <option selected disabled value="">검색조건</option>
+                <option selected disabled value="" id="select">검색조건</option>
                 <option value="?key=new">신상품</option>
                 <option value="?key=like">좋아요순</option>
                 <option value="?key=price-up">높은 가격순</option>
@@ -63,10 +63,14 @@
               <a href="?key=like">좋아요</a> -->
 
             </div>
-            <div class="search">
-              <input type="text" style="border:1px solid;">
-              <i class="fa fa-search"></i>
-            </div>
+            <form action="/zay/pages/menu_page/shop_search_result.php" name="pro_search_form">
+              <div class="search">
+                <input type="text" placeholder="상품명 검색" name="pro_search">
+                <button type="button" id="search_btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
         </div> <!-- end of shop_btns -->
         <!-- featured Product section -->
@@ -95,8 +99,10 @@
   const pathName = window.location.href;
   //console.log(pathName);
   const btns = document.querySelectorAll('.shop .shop_btns a');
-  console.log(btns);
+  const filterSelect = document.querySelector('#select');
   const btnsArr = ['all', 'watches', 'shoes', 'accessories'];
+  const filterEng = ['new', 'like', 'price-up', 'price-down'];
+  const filterkor = ['신상품', '좋아요순', '높은 가격순', '낮은 가격순'];
 
   for (let i = 0; i < btnsArr.length; i++) {
     btns[i].classList.remove('active');
@@ -104,11 +110,25 @@
       btns[i].classList.add('active');
     };
   };
+  for (let i = 0; i < filterEng.length; i++) {
+    if (pathName.includes(filterEng[i])) {
+      filterSelect.innerText = filterkor[i];
+    }
+  };
 
   function plzLogin() {
     alert('로그인 후 이용해 주세요.');
     return false;
   };
+
+  document.querySelector("#search_btn").onclick = function() {
+    if (!document.pro_search_form.pro_search.value) {
+      alert('상품명을 입력해 주세요.');
+      document.pro_search_form.pro_search.focus();
+      return
+    }
+    document.pro_search_form.submit();
+  }
   </script>
 </body>
 

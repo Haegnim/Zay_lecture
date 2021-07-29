@@ -194,5 +194,99 @@ h1 {
         color: $point-color;
       }
     }
+    & > div {
+      width: 50%;
+      &.filters {
+        @include flex($jc: flex-end, $ai: center);
+        .search {
+          @include flex($ai: center);
+        }
+        select {
+          background: $point-color;
+          color: #fff;
+          height: 100%;
+          padding: 10px;
+          border: 0;
+          border-radius: 5px;
+        }
+        input {
+          border: 1px solid #ccc;
+          margin-left: 5px;
+          height: 35px;
+          &:focus {
+            border: 1px solid $point-color;
+          }
+        }
+        button {
+          @include size($w: 40px, $h: 35px, $m: 0 0 0 5px);
+          @include flex($jc: center, $ai: center);
+          font-size: 16px;
+          border: 1px solid $point-color;
+          background: $point-color;
+          color: #fff;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+/* shop search page style code */
+.pro_search {
+  .tit_box {
+    border-bottom: 1px solid #eee;
+  }
+  .search_lists {
+    padding: 10px;
+  }
+  .search_item {
+    display: flex;
+    border-bottom: 1px solid #eee;
+  }
+  span {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.search_img {
+      padding: 10px;
+    }
+    img {
+      width: 80%;
+    }
+    &.search_txt {
+      width: 40%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 20px;
+      h2 {
+        font-weight: 400;
+        color: #555;
+      }
+      p {
+        font-weight: 300;
+        color: #555;
+        margin-top: 10px;
+      }
+    }
+    &.search_pri {
+      i {
+        font-size: 20px;
+        color: $point-color;
+      }
+    }
+    &.search_btns {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      button {
+        width: 80%;
+        margin: 5px 0;
+        background: $point-color;
+        color: #fff;
+        border-radius: 3px;
+      }
+    }
   }
 }

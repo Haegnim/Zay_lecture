@@ -82,6 +82,7 @@
             <span class="search_txt">
               <h2><?=$pro_name?></h2>
               <p><?=$pro_desc?></p>
+              <h3 class="show_hide">Total Price : <i class="fa fa-krw"></i><?=$pro_pri?> </h3>
             </span>
             <span class="search_pri">
               <h3><i class="fa fa-krw"></i><?=$pro_pri?></h3>

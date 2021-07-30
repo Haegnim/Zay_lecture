@@ -45,8 +45,12 @@
 
 
           <?php
+          $total = 0;
             if(isset($_SESSION['cart'])){
               foreach($_SESSION['cart'] as $key => $value){
+                $total = $total + $value['cart_pri'];
+                
+                $cart_idx=$value['cart_idx'];
                 $cart_img=$value['cart_img'];
                 $cart_name=$value['cart_name'];
                 $cart_pri=$value['cart_pri'];
@@ -57,22 +61,31 @@
           <!-- start loop search item  -->
           <div class="search_item">
             <span class="search_img">
-              <a href="#"><img src="/zay/data/product_imgs/<?=$cart_img?>" alt=""></a>
+              <a href="/zay/pages/details/pro_detail_form.php?pro_idx=<?=$cart_idx?>"><img
+                  src="/zay/data/product_imgs/<?=$cart_img?>" alt=""></a>
             </span>
             <span class="search_txt">
               <h2><?=$cart_name?></h2>
               <p><?=$cart_desc?></p>
+              <h3 class="show_hide">Total Price : <i class="fa fa-krw"></i><?=$cart_pri?> </h3>
             </span>
             <span class="search_pri">
               <h3><i class="fa fa-krw"></i><?=$cart_pri?></h3>
             </span>
             <span class="search_btns">
-              <button>REMOVE CART</button>
-              <button>ADD TO CART</button>
+              <form action="/zay/php/cart.php" method="post">
+                <button name="remove_cart">REMOVE ITEM</button>
+                <input type="hidden" name="cart_remove" value="<?=$cart_name?>">
+                <button>ADD TO CART</button>
+
+              </form>
             </span>
           </div>
           <!-- end of loop search item  -->
           <?php }} ?>
+          <div class="total_pri">
+            <h3>Total Price : <i class="fa fa-krw"></i><?=$total?> </h3>
+          </div>
         </div> <!-- end of search lists  -->
       </div>
     </section>

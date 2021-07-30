@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ //포스트 방식으로 데이터가 �
       }else{
         $count = count($_SESSION['cart']);
         $_SESSION['cart'][$count]=array(
+          'cart_idx'=> $_POST['cart_idx'],
           'cart_img'=> $_POST['cart_img'],
           'cart_name'=> $_POST['cart_name'],
           'cart_desc'=> $_POST['cart_desc'],
@@ -40,6 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ //포스트 방식으로 데이터가 �
 
     }else{
       $_SESSION['cart'][0]=array(
+      'cart_idx'=> $_POST['cart_idx'],
       'cart_img'=> $_POST['cart_img'],
       'cart_name'=> $_POST['cart_name'],
       'cart_desc'=> $_POST['cart_desc'],
@@ -54,7 +56,21 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ //포스트 방식으로 데이터가 �
       </script>
       ";
     }
-  };
-
-};
+  } // end check post add_to_cart name
+  // start check remove_cart post data
+  if(isset($_POST['remove_cart'])){
+    foreach($_SESSION['cart'] as $key => $value){
+      if($value['cart_name'] == $_POST['cart_remove']){//추가된 카트 상품 정보 중 상품 이름이 cart_remove 버튼 클릭 시 넘어오는 cart_remove의 post value와 같은 경우
+        unset($_SESSION['cart'][$key]);
+        $_SESSION['cart'] = array_values($_SESSION['cart']);
+        echo"
+      <script>
+      alert('카드에 상품이 삭제되었습니다.');
+      history.go(-1);
+      </script>
+      ";
+      }
+    }
+  }
+}
 ?>

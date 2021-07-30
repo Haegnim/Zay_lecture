@@ -259,7 +259,7 @@ h1 {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 0 20px;
+      padding: 20px;
       h2 {
         font-weight: 400;
         color: #555;
@@ -269,11 +269,17 @@ h1 {
         color: #555;
         margin-top: 10px;
       }
-    }
-    &.search_pri {
-      i {
-        font-size: 20px;
-        color: $point-color;
+      .show_hide {
+        display: none;
+      }
+      &.search_pri {
+        i {
+          font-size: 20px;
+          color: $point-color;
+        }
+        h3 {
+          color: #555;
+        }
       }
     }
     &.search_btns {
@@ -288,5 +294,11 @@ h1 {
         border-radius: 3px;
       }
     }
+  }
+  .total_pri {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    text-align: right;
   }
 }

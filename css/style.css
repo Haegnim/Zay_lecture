@@ -931,6 +931,9 @@ section.join .form_box .login_form .submit_info span a {
   text-align: right;
 }
 
+.admin .input_controll {
+  position: relative;
+}
 .admin .admin_tabs {
   width: 100%;
   height: auto;
@@ -1003,6 +1006,52 @@ section.join .form_box .login_form .submit_info span a {
 }
 .admin .img_input {
   display: flex;
+  width: 100%;
+  margin-top: 5px;
+  justify-content: space-between;
+}
+.admin .img_input .upload_box {
+  width: calc(50% - 2.5px);
+}
+.admin .upload_name {
+  width: 100%;
+  border: 1px solid #59ab6e;
+}
+.admin .input_img_tit {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  text-align: center;
+  border: 1px solid #59ab6e;
+  color: #fff;
+  background: #59ab6e;
+  display: block;
+  margin-top: 5px;
+  transition: all 0.4s;
+}
+.admin .input_img_tit:hover {
+  background: #fff;
+  color: #59ab6e;
+}
+.admin .upload_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+}
+.admin .img_wrap {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border: 1px solid #59ab6e;
+  margin-top: 5px;
+}
+.admin .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .admin .mem_admin {
   width: 100%;

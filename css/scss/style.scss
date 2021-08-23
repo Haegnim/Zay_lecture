@@ -304,6 +304,9 @@ h1 {
 }
 
 .admin {
+  .input_controll {
+    position: relative;
+  }
   .admin_tabs {
     width: 100%;
     height: auto;
@@ -376,6 +379,51 @@ h1 {
   }
   .img_input {
     display: flex;
+    width: 100%;
+    margin-top: 5px;
+    justify-content: space-between;
+    .upload_box {
+      width: calc(50% - 2.5px);
+    }
+  }
+  .upload_name {
+    width: 100%;
+    border: 1px solid $point-color;
+  }
+  .input_img_tit {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid $point-color;
+    color: #fff;
+    background: $point-color;
+    display: block;
+    margin-top: 5px;
+    transition: all 0.4s;
+    &:hover {
+      background: #fff;
+      color: $point-color;
+    }
+  }
+  .upload_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .img_wrap {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 1px solid $point-color;
+    margin-top: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .mem_admin {
     width: 100%;

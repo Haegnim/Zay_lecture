@@ -65,6 +65,32 @@
               </div>
               <p class="desc_input"><textarea name="pro_insert_desc" placeholder="상품 설명을 입력해 주세요..."></textarea></p>
               <div class="img_input">
+                <div class="upload_box img1">
+
+                  <div class="input_controll">
+                    <input type="text" class="upload_name" placeholder="상품 사진1">
+                    <label for="pro_img_1" class="input_img_tit">사진 선택</label>
+                    <input type="file" name="pro_insert_img1" class="upload_hidden" id="pro_img_1">
+
+                  </div>
+                  <div class="img1_box img_wrap">
+                    <img id="img1">
+                  </div>
+
+                </div>
+                <div class="upload_box img2">
+
+                  <div class="input_controll">
+                    <input type="text" class="upload_name" placeholder="상품 사진2">
+                    <label for="pro_img_2" class="input_img_tit">사진 선택</label>
+                    <input type="file" name="pro_insert_img2" class="upload_hidden" id="pro_img_2">
+
+                  </div>
+                  <div class="img2_box img_wrap">
+                    <img id="img2">
+                  </div>
+
+                </div>
                 <!-- <p><label>상품사진1</label> <input type="file" name="pro_insert_img1"></p>
                 <p><label>상품사진2</label> <input type="file" name="pro_insert_img2"></p> -->
               </div>
@@ -83,6 +109,7 @@
   <!-- jquery framework load -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
+  <script src="/zay/js/jq.pro_upload.js"></script>
 
 </body>
 

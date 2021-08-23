@@ -22,6 +22,7 @@ if($is_check > 0){
   $mem_name = $_POST['mem_name'];
   $mem_email = $_POST['mem_email'];
   $mem_regi = date('Y-m-d');
+  $mem_level = 9;
 
   //파일 변수가 전달 되면 각 파일의 정보가 함께 전달된다. 그 정보에는 파일의 이름, 임시이름, 에러 정보 등이 있다.
   $mem_pf_name = $_FILES['mem_pf']['name'];
@@ -47,14 +48,16 @@ if($is_check > 0){
     ZAY_mem_pf,
     ZAY_mem_name,
     ZAY_mem_email,
-    ZAY_mem_regi_day
+    ZAY_mem_regi_day,
+    ZAY_mem_level
   ) VALUES(
     '{$mem_id}',
     '{$mem_pass}',
     '{$mem_pf_name}',
     '{$mem_name}',
     '{$mem_email}',
-    '{$mem_regi}'
+    '{$mem_regi}',
+    '{$mem_level}'
   )";
   mysqli_query($dbConn, $sql);
   echo"

@@ -47,20 +47,25 @@
       <div class="center">
         <form action="/zay/php/product_insert.php" method="post" class="pro_insert_form" name="pro_insert_form"
           enctype="multipart/form-data">
-          <p>
+          <p class="category">
+            <em>category</em>
             <select name="pro_select" id="pro_select">
               <option value="watches">watches</option>
               <option value="shoes">shoes</option>
               <option value="accessories">accessories</option>
             </select>
           </p>
-          <p>상품이름 : <input type="text" name="pro_insert_name"></p>
-          <p>상품가격 : <input type="text" name="pro_insert_pri"></p>
-          <p>상품브랜드 : <input type="text" name="pro_insert_bran"></p>
-          <p>상품설명 : <textarea name="pro_insert_desc"></textarea></p>
-          <p>상품색상 : <input type="text" name="pro_insert_color"></p>
-          <p>상품사진1 : <input type="file" name="pro_insert_img1"></p>
-          <p>상품사진2 : <input type="file" name="pro_insert_img2"></p>
+          <div class="short_txt">
+            <p><label> 상품이름</label> <input type="text" name="pro_insert_name"></p>
+            <p><label>상품가격</label> <input type="text" name="pro_insert_pri"></p>
+            <p><label>상품브랜드</label> <input type="text" name="pro_insert_bran"></p>
+            <p><label>상품색상</label> <input type="text" name="pro_insert_color"></p>
+          </div>
+          <div class="img_input">
+            <p class="desc_input"><label>상품설명</label> <textarea name="pro_insert_desc"></textarea></p>
+            <p><label>상품사진1</label> <input type="file" name="pro_insert_img1"></p>
+            <p><label>상품사진2</label> <input type="file" name="pro_insert_img2"></p>
+          </div>
           <button type="submit">상품입력</button>
         </form>
       </div>

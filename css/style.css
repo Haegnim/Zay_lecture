@@ -118,6 +118,14 @@ header .login_info a:nth-child(3) {
   overflow: hidden;
   border-radius: 50%;
 }
+header .login_info a.admin_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .login_info a.admin_link i.fa {
+  font-size: 16px;
+}
 header .login_info img {
   width: 100%;
   height: 100%;
@@ -921,4 +929,83 @@ section.join .form_box .login_form .submit_info span a {
   height: auto;
   margin-top: 10px;
   text-align: right;
+}
+
+.admin .admin_tabs {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.admin .admin_tabs button {
+  background: #59ab6e;
+  color: #fff;
+}
+.admin .admin_panels {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.admin .pro_admin {
+  width: 100%;
+  height: auto;
+  background: #efefef;
+  padding: 10px;
+}
+.admin .pro_insert_form {
+  display: flex;
+  flex-direction: column;
+}
+.admin .category {
+  display: flex;
+}
+.admin .category em {
+  background: #59ab6e;
+  color: #fff;
+  padding: 5px 10px;
+}
+.admin .category select {
+  border: 1px solid #59ab6e;
+  padding: 5px;
+  margin-left: 5px;
+  outline: 0;
+}
+.admin .short_txt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.admin .short_txt p {
+  width: calc(25% - 2px);
+  display: flex;
+  justify-content: space-between;
+}
+.admin .short_txt p label {
+  background: #59ab6e;
+  color: #fff;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin .short_txt p input {
+  width: calc(70% - 5px);
+  border: 1px solid #59ab6e;
+}
+.admin .desc_input {
+  margin-top: 5px;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #59ab6e;
+}
+.admin .desc_input textarea {
+  width: 100%;
+  height: 100%;
+}
+.admin .img_input {
+  display: flex;
+}
+.admin .mem_admin {
+  width: 100%;
+  height: 100px;
+  background: lightpink;
 }

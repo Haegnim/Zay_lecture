@@ -103,6 +103,14 @@ header {
         overflow: hidden;
         border-radius: 50%;
       }
+      &.admin_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i.fa {
+          font-size: 16px;
+        }
+      }
     }
     img {
       @include size($w: 100%, $h: 100%);

@@ -302,3 +302,84 @@ h1 {
     text-align: right;
   }
 }
+
+.admin {
+  .admin_tabs {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    button {
+      background: $point-color;
+      color: #fff;
+    }
+  }
+  .admin_panels {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  .pro_admin {
+    width: 100%;
+    height: auto;
+    background: #efefef;
+    padding: 10px;
+  }
+  .pro_insert_form {
+    display: flex;
+    flex-direction: column;
+  }
+  .category {
+    display: flex;
+    em {
+      background: $point-color;
+      color: #fff;
+      padding: 5px 10px;
+    }
+    select {
+      border: 1px solid $point-color;
+      padding: 5px;
+      margin-left: 5px;
+      outline: 0;
+    }
+  }
+  .short_txt {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    p {
+      width: calc(25% - 2px);
+      display: flex;
+      justify-content: space-between;
+      label {
+        background: $point-color;
+        color: #fff;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      input {
+        width: calc(70% - 5px);
+        border: 1px solid $point-color;
+      }
+    }
+  }
+  .desc_input {
+    margin-top: 5px;
+    width: 100%;
+    height: 150px;
+    border: 1px solid $point-color;
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .img_input {
+    display: flex;
+  }
+  .mem_admin {
+    width: 100%;
+    height: 100px;
+    background: lightpink;
+  }
+}

@@ -41,8 +41,8 @@
           <h2>관리자 페이지</h2>
         </div>
         <div class="admin_tabs">
-          <button type="button">상품관리</button>
-          <button type="button">회원 관리</button>
+          <button type="button">상품입력</button>
+          <button type="button">회원관리</button>
         </div>
         <div class="admin_panels">
           <div class="pro_admin">
@@ -94,10 +94,49 @@
                 <!-- <p><label>상품사진1</label> <input type="file" name="pro_insert_img1"></p>
                 <p><label>상품사진2</label> <input type="file" name="pro_insert_img2"></p> -->
               </div>
-              <button type="submit">상품입력</button>
+              <button type="submit" class="pro_insert_btn">상품입력</button>
             </form>
           </div>
-          <div class="mem_admin"></div>
+          <div class="mem_admin">
+            <ul class="mem_admin_lists">
+              <li class="mem_admin_tit">
+                <span>선택</span>
+                <span>번호</span>
+                <span>아이디</span>
+                <span>이름</span>
+                <span>레벨</span>
+                <span>수정</span>
+              </li>
+              <form action="#" class="mem_admin_form" id="mem_admin_form" method="post">
+                <?php
+                include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
+                $sql = "SELECT * FROM zay_mem ORDER BY ZAY_mem_idx DESC LIMIT 5";
+                $mem_result = mysqli_query($dbConn, $sql);
+                while($mem_row = mysqli_fetch_array($mem_result)){
+                  $mem_idx = $mem_row['ZAY_mem_idx'];
+                  $mem_id = $mem_row['ZAY_mem_id'];
+                  $mem_name = $mem_row['ZAY_mem_name'];
+                  $mem_level = $mem_row['ZAY_mem_level'];
+
+                ?>
+
+                <li class="mem_admin_con">
+
+                  <span><input type="checkbox" name="item"></span>
+                  <span class="idx"><?=$mem_idx?></span>
+                  <span><?=$mem_id?></span>
+                  <span><?=$mem_name?></span>
+                  <span class="level"><input type="text" value="<?=$mem_level?>" name="mem_level"></span>
+                  <span><button type="button" class="update_btn">수정</button></span>
+
+                </li>
+                <?php } ?>
+              </form>
+            </ul>
+            <div class="select_del_btn">
+              <button type="button">선택삭제</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -110,6 +149,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="/zay/js/jq.main.js"></script>
   <script src="/zay/js/jq.pro_upload.js"></script>
+  <script>
+  $(function() {
+    $(".update_btn").click(function() {
+      const mem_idx = $(this).parent().siblings('.idx').text();
+      const mem_level = $(this).parent().siblings('.level').find('input').val();
+      //`/zay/php/member_update.php?update_idx=3%mem_level=5`;
+      location.href = `/zay/php/member_update.php?update_idx=${mem_idx}&mem_level=${mem_level}`;
+      // $("#mem_admin_form").attr('action',
+      //   `/zay/php/member_update.php?update_idx=${mem_idx}&mem_level=${mem_level}`).submit();
+    });
+    // console.log(mem_idx);
+    $(".select_del_btn button").click(function() {
+      // console.log('mem_idx');
+
+      $("#mem_admin_form").attr('action',
+        `/zay/php/admin_delete.php`).submit();
+
+    });
+  });
+  </script>
 
 </body>
 

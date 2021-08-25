@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
 
 $pro_like = 0;
@@ -7,8 +8,8 @@ $pro_pri = $_POST['pro_insert_pri'];
 $pro_bran = $_POST['pro_insert_bran'];
 $pro_desc = addslashes($_POST['pro_insert_desc']);
 $pro_color = $_POST['pro_insert_color'];
-
 $pro_reg = date("Y-m-d");
+
 
 $pro_img1_name = $_FILES['pro_insert_img1']['name'];
 $pro_img1_tmp = $_FILES['pro_insert_img1']['tmp_name'];
@@ -40,32 +41,37 @@ if($pro_img2_name && !$pro_img2_err){
   $pro_img2_name = "";
 }
 
-include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
-$sql = "INSERT INTO zay_pro (
-  ZAY_pro_like,
-  ZAY_pro_cate,
-  ZAY_pro_name,
-  ZAY_pro_pri,
-  ZAY_pro_bran,
-  ZAY_pro_desc,
-  ZAY_pro_color,
-  ZAY_pro_img_01,
-  ZAY_pro_img_02,
-  ZAY_pro_reg
-)VALUES(
-  '{$pro_like}',
-  '{$pro_cate}',
-  '{$pro_name}',
-  '{$pro_pri}',
-  '{$pro_bran}',
-  '{$pro_desc}',
-  '{$pro_color}',
-  '{$pro_img1_name}',
-  '{$pro_img2_name}',
-  '{$pro_reg}'
-)";
+// $pro_idx = 1;
+// $pro_writer = 1;
+// $pro_txt = 1;
+// $pro_reg = 1;
 
-mysqli_query($dbConn, $sql);
+include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
+$sql = "INSERT INTO zay_pro(
+   ZAY_pro_like,
+   ZAY_pro_cate,
+   ZAY_pro_name,
+   ZAY_pro_pri,
+   ZAY_pro_bran,
+   ZAY_pro_desc,
+   ZAY_pro_color,
+   ZAY_pro_img_01,
+   ZAY_pro_img_02,
+   ZAY_pro_reg
+  ) VALUES (
+   '{$pro_like}',
+   '{$pro_cate}',
+   '{$pro_name}',
+   '{$pro_pri}',
+   '{$pro_bran}',
+   '{$pro_desc}',
+   '{$pro_color}',
+   '{$pro_img1_name}',
+   '{$pro_img2_name}',
+   '{$pro_reg}'
+  )";
+
+    mysqli_query($dbConn, $sql);
 
 echo"
 <script>

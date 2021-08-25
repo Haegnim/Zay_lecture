@@ -8,7 +8,7 @@ $sql_check = "SELECT * FROM zay_mem WHERE ZAY_mem_id='{$mem_id}'";
 $check_result = mysqli_query($dbConn, $sql_check);
 $is_check = mysqli_num_rows($check_result);
 
-echo $is_check;
+// echo $is_check;
 
 if($is_check > 0){
   echo"
@@ -18,7 +18,11 @@ if($is_check > 0){
   </script>
   "; 
 }else{
-  $mem_pass = $_POST['mem_pass'];
+  $password = $_POST['mem_pass'];
+//참조 : https://zetawiki.com/wiki/PHP_password_verify()
+
+
+  $mem_pass = password_hash($password, PASSWORD_DEFAULT);
   $mem_name = $_POST['mem_name'];
   $mem_email = $_POST['mem_email'];
   $mem_regi = date('Y-m-d');

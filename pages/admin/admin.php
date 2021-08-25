@@ -31,6 +31,15 @@
   <div class="wrap">
     <?php
     include $_SERVER["DOCUMENT_ROOT"]."/zay/include/header.php";
+
+    if(!$userid || $userlevel != 1){
+      echo"
+      <script>
+      alert('잘못된 접근입니다.');
+      location.href = '/zay/index.php';
+      </script>";
+    }
+
     ?>
 
     <section class="admin
@@ -122,8 +131,8 @@
 
                 <li class="mem_admin_con">
 
-                  <span><input type="checkbox" name="item"></span>
-                  <span class="idx"><?=$mem_idx?></span>
+                  <span><input type="checkbox" name="item[]" value="<?=$mem_idx?>"></span>
+                  <span class=" idx"><?=$mem_idx?></span>
                   <span><?=$mem_id?></span>
                   <span><?=$mem_name?></span>
                   <span class="level"><input type="text" value="<?=$mem_level?>" name="mem_level"></span>

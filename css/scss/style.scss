@@ -462,7 +462,7 @@ h1 {
       // width: 100%;
       // display: flex;
     }
-    & > ul > li span {
+    ul li span {
       text-align: center;
       &:nth-child(1) {
         width: 10%;
@@ -494,6 +494,18 @@ h1 {
           font-size: 12px;
         }
       }
+    }
+  }
+  .select_del_btn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    button {
+      background: $point-color;
+      color: #fff;
+      padding: 8px 20px;
     }
   }
 }

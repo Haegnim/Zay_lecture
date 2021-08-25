@@ -18,6 +18,7 @@
       }else{
         $userprofile = "";
       }
+      
       if(isset($_SESSION['userlevel'])){
         $userlevel = $_SESSION['userlevel'];
       }else{

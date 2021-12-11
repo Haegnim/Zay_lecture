@@ -79,7 +79,9 @@
         <a href="/zay/php/logout.php">로그아웃</a>
         <a href="#"><?=$userid?></a>
         <a href="/zay/pages/admin/admin.php" class="admin_link"><i class="fa fa-cog"></i></a>
-        <?php }else{ ?>
+
+        <?php 
+      }else{ ?>
 
         <!-- 로그인 시 보여질 UI -->
         <a href="/zay/php/logout.php">로그아웃</a>

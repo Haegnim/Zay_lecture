@@ -13,8 +13,10 @@ _todo 스케줄 대시보드_
 ## 사이트
 
 [🖥 Go site](http://haegnim.dothome.co.kr/zay/)<br>
-🔐 관리자 ID : admin
+🔐 관리자 ID : admin<br>
 🔐 관리자 PS : 0000
+
+---
 
 **구현된 페이지**
 
@@ -66,14 +68,6 @@ _todo 스케줄 대시보드_
 - 관리자 아이디로 접속시에만 접근 허용
 - 상품 등록 기능 구현
 
-  <br>
-  <br>
-  <br>
-
-## POINT
-
-- 뉴모피즘 스타일의 UI 적용
-- 탭 선택바 부분에 SVG 애니메이션을 사용
   <br>
   <br>
   <br>

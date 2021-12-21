@@ -31,6 +31,7 @@
   <div class="wrap">
     <?php
     include $_SERVER["DOCUMENT_ROOT"]."/zay/include/header.php";
+    include $_SERVER["DOCUMENT_ROOT"]."/connect/db_conn.php";
     ?>
 
     <!-- slider landing section -->
